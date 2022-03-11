@@ -1,0 +1,40 @@
+Redux is used for the purpose of state Management
+
+The data in React always flows from parent to child components which makes it unidirectional.
+(Hum Top tree se bottom tree me data pass kr sakte h but bottom tree se top tree me data pass nhi kr sakte h)
+
+To bottom tree se top tree me pass krneke liye React bolta h use Prop Drilling
+Phir hum contextAPi aur Use Context se krte the
+
+But yaha redux ky krta h 
+-> jo b data h vo hum redux store me store krdenge and phir koi b component ko data chaiye to vo redux store ke help se data lelega
+
+what is redux ?
+-> Redux is a pattern and library for managing and updating application state, using events called "actions. It serves a centralized store for state that needs to be used across your entire application, with rules ensuring that the state can only be updated in a predictable fashion.
+Means 
+(Redux aapka main kaam krta h state ko manage krneke liye and vo state ko manage krne ke liey centralized store h jaha data store hota h and aapke application ke aander kisi b file ya component ko agar data chaiye rahega to vo vahase data get , update kr sakta h and jabhi update krega vo hoga predictable fashion me. predictable matlab kis data ko konse component ne liya h ky liya h and update kr rha h to ky update kr rha h and uska previous data ky h )
+
+Redux Main Topics:-
+- Action (What to do) : matlab mujhe ky action perform krna h eg: button me data incr hona chaiye to ye action hogaya
+- Reducer (How to do) : It takes state and action aur batata h kis tarike se krna h matlab incr kaise hoga usko functionality aayega
+- Store (objects which holds the state of the application) : Yaha saara data store hoyega 
+- Function associated with store:-
+    createStore() - Store ko kasie create kaare 
+    dispatch(action) - action ko kaise trigger kare ki incr ya decr karana h
+    getState() - to get the current state . state ky h uski value ko get krne ke liye
+
+1. Action(Pure object):-
+    - Action are plain Javascript objects that have a type field.
+    - Action only tell what to do, but they dont tell how to do.
+    eg: return {
+        type: 'INCREMENT'
+        payload: num
+    } Here type is action as it is describing us that what to do means we have to increment the num here
+
+2. Reducer :-
+    Reducer are functions that take the current state and action as arguments, and retrun a new state result.
+
+3. Store:-
+    - The Redux store brings together the state, actions, and Reducers that make up your app
+    - It's important to note that you'll only have a single store in a Redux application.
+    - Every Redux store has a single root reducer function.
